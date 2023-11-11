@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "c23d3210-7880-483d-a480-78a5d9e0db71",
+		"name": "IdentityServer - Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30919094"
+	},
+	"item": [
+		{
+			"name": "Get Forcast",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkYzRTY4MjFFOUYyNUNCMjczNDU1MDQ1MzM2NURGRkU4IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTk1IiwibmJmIjoxNjk5NjQ1MTI4LCJpYXQiOjE2OTk2NDUxMjgsImV4cCI6MTY5OTY0ODcyOCwic2NvcGUiOlsiYXBpMSJdLCJjbGllbnRfaWQiOiJjbGllbnQiLCJqdGkiOiIyQzcwNEZFQ0U2OTIyQTdDMjVFQzRCMkNCNUZEMDJBMCJ9.ncnWL5Qw4yeOYaF4g4tvnwvvIkgaaoP5WWiG61lAzY7NrOsBr0AW9jk8eNxukwWcXyIFewdePKzBsa9JjofgaqqifGfMkBaIl9Mh2do3u-GzBc0FXS_OeQCZNXhPQ6tWmFwsKfMmOttAG2qVjg_sk8suEd8YiT4kjwR-bF4DzeKSyzIy7uzUra5RIJ6Fj5SlulnpGpJnpKKEoxQEfLcJACqcu_9MbnoL0VQN9-a6BZCHIcPL5Qh5ZzbJ4a1fuiaeZCnofb8lfdyugyUJXG461pCDd85fr911gYmZ0CNAlkGIDku2r0EnXSht4j8MNjwKhqyxhVlywmgKbm-j4eupnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:6001/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requesting Access Token (Client Credentials)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "api1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/Connect/Token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Connect",
+						"Token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requesting Access Token (ResourceOwnerPassword)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "ResourceOwnerPasswordClient",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "api1",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "AhmedTurky",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/Connect/Token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Connect",
+						"Token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
